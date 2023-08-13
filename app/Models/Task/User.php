@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Auth;
+namespace App\Models\Task;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -11,7 +11,7 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
-    protected $connection = 'pgsql_auth';
+    protected $connection = 'pgsql_task';
 
     /**
      * The attributes that are mass assignable.
