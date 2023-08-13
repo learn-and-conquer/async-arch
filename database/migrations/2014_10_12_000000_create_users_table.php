@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+    protected $connection = 'pgsql_auth';
+
     /**
      * Run the migrations.
      */

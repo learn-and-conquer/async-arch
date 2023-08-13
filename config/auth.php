@@ -14,7 +14,7 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'web',
+        'guard' => 'guard-auth',
         'passwords' => 'users',
     ],
 
@@ -36,9 +36,13 @@ return [
     */
 
     'guards' => [
-        'web' => [
+        'guard-auth' => [
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'auth_users',
+        ],
+        'guard-task' => [
+            'driver' => 'session',
+            'provider' => 'task_users',
         ],
     ],
 
@@ -60,9 +64,14 @@ return [
     */
 
     'providers' => [
-        'users' => [
+        'auth_users' => [
             'driver' => 'eloquent',
-            'model' => App\Models\User::class,
+            'model' => \App\Models\Auth\User::class,
+        ],
+
+        'task_users' => [
+            'driver' => 'eloquent',
+            'model' => \App\Models\Task\User::class,
         ],
 
         // 'users' => [
